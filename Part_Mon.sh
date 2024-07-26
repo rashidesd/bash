@@ -1,5 +1,6 @@
 #!/bin/sh
 df -H /u01 | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 " " $6}' | while read output;
+echo " new change"
 do
   echo $output
   usep=$(echo $output | awk '{ print $1}' | cut -d'%' -f1  )
